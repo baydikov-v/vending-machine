@@ -45,6 +45,9 @@ input[type="text"] {
 .form-group {
   margin-bottom: 15px;
 }
+.error {
+    color: red;
+}
 .app {
   width: 960px;
   margin: auto;
