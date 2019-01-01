@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import Product from './Product';
@@ -29,6 +30,10 @@ const mapStateToProps = (state) => {
   return {
     products: state.products,
   };
+};
+
+ProductList.propTypes = {
+  products: PropTypes.object,
 };
 
 export default connect(mapStateToProps)(ProductList);

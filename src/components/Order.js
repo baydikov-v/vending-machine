@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setProductNumber, setAmount } from '../actions/order';
 import Error from './elements/Error';
@@ -26,7 +27,7 @@ const Order = (props) => {
         onChange={e => props.setAmount(e.target.value)}
       />
     </div>
-    <h4 className='total-cost'>Total cost: { totalCost ? totalCost : '--' }</h4>
+    <h4 className='total-cost'>Total cost: { totalCost ? `$${totalCost}` : '--' }</h4>
   </div>;
 };
 
@@ -37,6 +38,15 @@ const mapStateToProps = (state) => {
     totalCost: state.order.totalCost,
     errors: state.order.errors,
   };
+};
+
+Order.propTypes = {
+  productNumber: PropTypes.string,
+  amount: PropTypes.string,
+  totalCost: PropTypes.number,
+  errors: PropTypes.object,
+  setProductNumber: PropTypes.func,
+  setAmount: PropTypes.func,
 };
 
 export default connect(mapStateToProps, {

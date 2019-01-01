@@ -1,4 +1,10 @@
-import { SET_PRODUCT_NUMBER, PRODUCT_NUMBER_VALIDATION_ERROR, SET_AMOUNT, SET_TOTAL_COST } from '../actionTypes';
+import {
+  SET_PRODUCT_NUMBER,
+  PRODUCT_NUMBER_VALIDATION_ERROR,
+  SET_AMOUNT,
+  SET_TOTAL_COST,
+  BUY
+} from '../actionTypes';
 
 const defaultState = {
   productNumber: '',
@@ -42,6 +48,8 @@ export default (state = defaultState, action) => {
         ...state,
         totalCost,
       };
+    case BUY:
+      return defaultState;
     default:
       return state;
   }

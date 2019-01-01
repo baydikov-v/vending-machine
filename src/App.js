@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import ProductList from './components/ProductList';
 import Order from './components/Order';
-import Money from './components/Money';
+import Balance from './components/Balance';
+import TransactionsList from './components/TransactionsList';
 
 class App extends Component {
   render() {
@@ -16,8 +17,9 @@ class App extends Component {
             <ProductList/>
             <div className='right-panel'>
               <Order/>
-              <Money/>
+              <Balance/>
             </div>
+            <TransactionsList/>
           </div>
         </div>
       </Provider>

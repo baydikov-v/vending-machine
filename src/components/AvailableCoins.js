@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const AvailableCoins = (props) => {
@@ -13,6 +14,10 @@ const mapStateToProps = (state) => {
   return {
     coins: state.coins,
   };
+};
+
+AvailableCoins.propTypes = {
+  coins: PropTypes.array
 };
 
 export default connect(mapStateToProps)(AvailableCoins);

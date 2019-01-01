@@ -37,10 +37,21 @@ input[type="text"] {
   vertical-align: middle;
   white-space: nowrap
 }
+.btn[disabled] {
+  box-shadow: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: .65;
+}
 .btn-default {
   background-color: #fff;
   border-color: #ccc;
   color: #333;
+}
+.btn-primary {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #fff;
 }
 .form-group {
   margin-bottom: 15px;
@@ -51,6 +62,7 @@ input[type="text"] {
 .app {
   width: 960px;
   margin: auto;
+  padding-bottom: 20px;
   border: 1px solid #000;
 }
 .app-header {
@@ -93,4 +105,14 @@ input[type="text"] {
 }
 .available-coins {
   margin-bottom: 10px ;
+}
+.transactions-list table {
+  width: 100%;
+}
+.transactions-list table th, .transactions-list table td {
+  border-top: 1px solid #ddd;
+  line-height: 1.42857143;
+  padding: 8px;
+  vertical-align: top;
+  text-align: center;
 }

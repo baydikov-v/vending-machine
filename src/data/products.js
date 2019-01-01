@@ -1,22 +1,22 @@
 export default [
   {
     id: 1,
-    title: 'Crackers',
+    name: 'Crackers',
     price: 2.5
   },
   {
     id: 2,
-    title: 'Pepsi',
+    name: 'Pepsi',
     price: 1
   },
   {
     id: 3,
-    title: 'Coca-Cola',
+    name: 'Coca-Cola',
     price: 1.5
   },
   {
     id: 4,
-    title: 'Sprite',
+    name: 'Sprite',
     price: 1.2
   }
 ];
