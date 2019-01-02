@@ -1,6 +1,7 @@
 import { ADD_MONEY, SET_TOTAL_COST } from '../actionTypes';
 import { amountNotValid } from '../actions/balance';
 import { addMoney, makeChange } from '../services/balance';
+import { priceNormalize } from '../function';
 
 export default ({ dispatch, getState}) => next => action => {
   const { type, amount } = action;
@@ -15,7 +16,7 @@ export default ({ dispatch, getState}) => next => action => {
         error: 'Not enough money for this product'
       });
     } else {
-      const change = parseInt((addMoney(amount, balance.amount) - order.totalCost) * 100);
+      const change = priceNormalize((addMoney(amount, balance.amount) - order.totalCost) * 100);
       if (makeChange(change, [...coins]) > 0) {
         return next({
           ...action,
@@ -29,7 +30,7 @@ export default ({ dispatch, getState}) => next => action => {
     if (balance.amount < action.totalCost) {
       dispatch(amountNotValid('Not enough money for this product'));
     } else {
-      const change = parseInt((balance.amount - action.totalCost) * 100);
+      const change = priceNormalize((balance.amount - action.totalCost) * 100);
       if (makeChange(change, [...coins]) > 0) {
         dispatch(amountNotValid('Sorry, we have no change for that amount'));
       }

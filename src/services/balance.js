@@ -1,5 +1,7 @@
+import { priceNormalize } from '../function';
+
 export function addMoney(amount, stateAmount) {
-  return +amount / 100 + stateAmount;
+  return priceNormalize(+amount / 100 + stateAmount);
 }
 
 export function makeChange(total, coinsArr) {
